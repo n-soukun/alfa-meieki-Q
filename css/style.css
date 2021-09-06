@@ -1,0 +1,250 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    font-size: 1.6rem;
+}
+
+body{
+    background: #000;
+    text-align: center;
+}
+
+.section_title{
+    display: inline-block;
+    margin: 100px auto 50px;
+    padding: 0;
+    font-size: 120px;
+    color: #fff;
+    border-bottom: 6px solid #861616;
+    line-height: 120px;
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+}
+
+.dark_bg{
+    position: relative;
+    background: rgba(0, 0, 0, 0.76);
+}
+
+.dark_bg::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.76), rgba(0,0,0,1));
+    z-index: 1;
+}
+
+.dark_bg::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.76));
+    z-index: 1;
+}
+
+/*ヘッダー*/
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    z-index: 3;
+}
+header .left{
+    float: left;
+    padding: 12px;
+}
+
+/*トップコンテナ*/
+.top_box{
+    width: 100%;
+    height: calc(100vh + 120px);
+    background-image: url(../img/top.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+.top_box::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.76);
+    z-index: 0;
+}
+.top_box::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.76));
+    z-index: 1;
+}
+.top_img{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+.top_img img{
+    z-index: 1;
+}
+
+.center{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    background: #fff;
+    color: #000;
+    z-index: 99;
+}
+
+/*scrolldown*/
+.scrolldown{
+    position: absolute;
+    bottom: 3%;
+    left:50%;
+}
+.scrolldown span{
+    position: absolute;
+    left: -24px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+
+.scrolldown::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    animation: arrowmove 1.2s linear infinite;
+}
+
+@keyframes arrowmove{
+    0%{bottom: 6px;opacity: 0;}
+    25%{bottom: 3px;opacity: 1;}
+    50%{bottom: 0px;opacity: 1;}
+    75%{bottom: -3px;opacity: 1;}
+    100%{bottom:-6px;opacity: 0;}
+}
+
+/*あらすじ*/
+.story{
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+    margin-bottom: 200px;
+}
+
+.story .big_text{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 150px auto;
+    line-height: 50px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.story p{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 60px auto;
+    line-height: 46px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/*準備編*/
+.wrap_boxs{
+    padding: 90px 0;
+    width: 100%;
+    height: auto;
+    background-image: url(../img/wall01-768x576.png);
+    z-index: -1;
+}
+
+.boxs_dark{
+    padding-bottom: 30px;
+}
+
+.box_paper{
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto 45px;
+    padding: 40px 30px;
+    background-image: url(../img/Paper.jpg);
+}
+
+.box_left{
+    right: 20px;
+}
+
+.box_right{
+    left: 20px;
+}
+
+.box_header{
+    width: 100%;
+    height: 140px;
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+}
+
+.header_number{
+    float: left;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    font-size: 100px;
+    text-align: center;
+}
+
+.header_title{
+    display: flex;
+    align-items: center;
+    float: left;
+    text-align: left;
+    width: 480px;
+    height: 140px;
+    margin-left: 30px;
+    font-size: 40px;
+}
+
+.box_body{
+    position: relative;
+    width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+    font-size: 25px;
+    font-family: tbcgothic-std, sans-serif;
+}
