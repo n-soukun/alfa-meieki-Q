@@ -1,8 +1,4 @@
 $(function(){
-	ScrollReveal().reveal('.top_img', { delay: 240, distance: "40px",origin: "bottom", duration: 1400});
-    ScrollReveal().reveal('.headline', { delay: 500, duration: 1000});
-    ScrollReveal().reveal('.box_left', { delay: 500, distance: "20px", origin: "right", duration: 800});
-    ScrollReveal().reveal('.box_right', { delay: 500, distance: "20px", origin: "left", duration: 800});
 
     let headNav = $("header");
 
@@ -18,6 +14,10 @@ $(function(){
 	function finish_loading(){
 		$(".loading").fadeOut();
 		$("body").css("overflow", "initial");
+		ScrollReveal().reveal('.top_img', { delay: 240, distance: "40px",origin: "bottom", duration: 1400});
+		ScrollReveal().reveal('.headline', { delay: 500, duration: 1000});
+		ScrollReveal().reveal('.box_left', { delay: 500, distance: "20px", origin: "right", duration: 800});
+		ScrollReveal().reveal('.box_right', { delay: 500, distance: "20px", origin: "left", duration: 800});
 	}
 
 	function move_header(){

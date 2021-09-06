@@ -327,3 +327,17 @@ header .logo img{
     font-size: 18px;
     font-family: tbcgothic-std, sans-serif;
 }
+
+/*フッター*/
+footer{
+    display: block;
+    padding: 40px 0;
+    width: 100%;
+    background: #000;
+    text-align: center;
+}
+footer p{
+    margin: 30px 0;
+    font-size: 12px;
+    color: #fff;
+}
