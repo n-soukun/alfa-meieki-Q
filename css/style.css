@@ -16,6 +16,8 @@ html,body{
 body{
     background: #000;
     text-align: center;
+    height: 100vh;
+    overflow: hidden;/*for loading*/
 }
 
 .section_title{
@@ -56,6 +58,43 @@ body{
     height: 90px;
     background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.76));
     z-index: 1;
+}
+
+::selection {
+    background: #861616aa;
+    color: #fff;
+}
+
+/*Firefox*/
+::-moz-selection {
+    background: #861616aa;
+    color: #fff;
+}
+
+/*ローディング*/
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 100;
+}
+
+.loading .loading_img{
+    width: 100px;
+    height: 100px;
+    animation: bombermove 1s ease-in-out infinite;
+}
+
+@keyframes bombermove{
+    0%{opacity: 0.5;}
+    50%{opacity: 1;}
+    100%{opacity: 0.5;}
 }
 
 /*ヘッダー*/
@@ -242,6 +281,7 @@ header .logo img{
     margin: 0 auto 45px;
     padding: 30px 20px;
     background-image: url(../img/Paper.jpg);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
 }
 
 .box_left{
