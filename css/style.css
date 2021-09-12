@@ -185,6 +185,8 @@ header .logo img{
     z-index: 0;
 }
 .top_img img{
+    max-width: 960px;
+    width: calc(100% - 40px);
     z-index: 1;
 }
 

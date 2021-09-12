@@ -1,0 +1,31 @@
+{
+    "steps":[
+        {
+            "messages": {
+                "messages": ["N高等学校を二文字に省略すると？"],
+                "return": false
+            },
+            "responses": [
+                {
+                    "filter": "N高",
+                    "next": 1
+                }
+            ],
+            "other": {
+                "messages": ["違うよ～"],
+                "next": 0
+            }
+        },
+        {
+            "messages": {
+                "messages": ["大正解！！","これで終わりだよ！","遊んでくれてありがとう！"],
+                "return": false
+            },
+            "responses": [],
+            "other": {
+                "messages": ["クイズはおしまいだよ"],
+                "next": 1
+            }
+        }
+    ]
+}

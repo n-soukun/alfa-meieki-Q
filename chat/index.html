@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat-bot-prototype</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="wrap_app">
+        <div id="app">
+            <div id="title_bar">
+                <div id="title_content">Room title</div>
+            </div>
+            <div id="wrap_messages">
+                <div id="messages">
+                    <div id="wrap_message" class="other_message">
+                        <div class="message">Please your name.</div>
+                        <div class="user-icon"></div>
+                    </div>
+                    <div id="wrap_message" class="my_message">
+                        <div class="message">Taro Sato</div>
+                    </div>
+                    <div id="wrap_message" class="other_message">
+                        <div class="message">Do you like studying?</div>
+                        <div class="user-icon"></div>
+                    </div>
+                    <div id="wrap_message" class="my_message">
+                        <div class="message">Yes</div>
+                    </div>
+                    <div id="wrap_message" class="other_message">
+                        <div class="message">OK, that’s all the question.</div>
+                        <div class="message">Thank you!</div>
+                        <div class="user-icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="wrap_bottom_content">
+                <div id="bottom_left"  class="bottom_float">
+                    <!--<div id="bottom_text">ここに回答を入力</div>-->
+                    <input type="text" name="send_text" id="bottom_input" placeholder="ここにメッセージを入力">
+                </div>
+                <div id="bottom_right" class="bottom_float">
+                    <button id="bottom_submit" class="bottom_button">送信</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
