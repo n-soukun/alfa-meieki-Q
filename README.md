@@ -1,4 +1,5 @@
 # alfa-meieki-Q
 名駅キャンパスQ班
 ## Webページ
-https://n-soukun.github.io/alfa-meieki-Q/
+* Github pages：https://n-soukun.github.io/alfa-meieki-Q/
+* 公開ページ：https://n.soukun.work/alfa-meieki-Q/
