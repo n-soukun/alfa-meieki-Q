@@ -7,6 +7,7 @@
     <title>chat-bot-prototype</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -17,24 +18,11 @@
             </div>
             <div id="wrap_messages">
                 <div id="messages">
-                    <div id="wrap_message" class="other_message">
-                        <div class="message">Please your name.</div>
-                        <div class="user-icon"></div>
-                    </div>
-                    <div id="wrap_message" class="my_message">
-                        <div class="message">Taro Sato</div>
-                    </div>
-                    <div id="wrap_message" class="other_message">
-                        <div class="message">Do you like studying?</div>
-                        <div class="user-icon"></div>
-                    </div>
-                    <div id="wrap_message" class="my_message">
-                        <div class="message">Yes</div>
-                    </div>
-                    <div id="wrap_message" class="other_message">
-                        <div class="message">OK, that’s all the question.</div>
-                        <div class="message">Thank you!</div>
-                        <div class="user-icon"></div>
+                    <div id="wrap_message" v-for="item of items" v-bind:class="[item.main ? 'my_message' : 'other_message']">
+                        <div v-for="message of item.messages">
+                            <div class="message">{{ message }}</div>
+                        </div>
+                        <div v-if="!item.main" class="user-icon"></div>
                     </div>
                 </div>
             </div>

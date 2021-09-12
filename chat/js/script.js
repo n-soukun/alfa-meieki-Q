@@ -9,47 +9,46 @@ $(function(){
     const submit = () =>{
         const input = document.getElementById("bottom_input");
         if(input.value ==  "") return;
-        addMyMessage(input.value);
+        addMessage([input.value], true);
         postSend(input.value);
         input.value =  "";
     }
 
     $("#bottom_submit").on("click", submit);
 
-    const addMyMessage = (text) => {
-        const lastMessages = $("#messages #wrap_message:last-of-type");
-        const newElement = `<div class="message">${text}</div>`;
-        if(lastMessages.hasClass("my_message")){
-            lastMessages.append(`<br>${newElement}`);
-        }else{
-            $("#messages").append(`
-            <div id="wrap_message" class="my_message">
-                ${newElement}
-            </div>
-            `);
+    var chat = new Vue({
+        el: '#messages',
+        data: {
+            items: [
+                {main: false, messages : ["Please your name."]},
+                {main: true, messages : ["Taro Sato"]},
+                {main: false, messages: ["Do you like studying?"]},
+                {main: true, messages: ["Yes"]},
+                {main: false, messages: ["OK, that's all the question.","Thank you!"]}
+            ]
         }
-        $("#messages").scrollTop($("#messages")[0].scrollHeight);  
+    })
+
+    /**
+     * チャットにメッセージを追加する
+     * @param {Array} messages 
+     * @param {Boolean} main 
+     */
+    const addMessage = (messages, main) =>{
+        chat.items.push({main: main,messages: messages});
+        setTimeout(function(){
+            bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
+            console.log($("#messages")[0].scrollHeight+","+$("#messages").innerHeight()+","+bottom);
+            $("#messages").scrollTop(bottom);
+        },1);
     }
-    
-    const addOtherMessage = (text) => {
-        const lastMessages = $("#messages #wrap_message:last-of-type");
-        const newElement = `<div class="message">${text}</div>`
-        if(lastMessages.hasClass("other_message")){
-            lastMessages.append(`<br>${newElement}`);
-        }else{
-            $("#messages").append(`
-            <div id="wrap_message" class="other_message">
-                ${newElement}
-                <div class="user-icon"></div>
-            </div>
-            `);
-        }
-        $("#messages").scrollTop($("#messages")[0].scrollHeight);  
+
+    const showScrollTop = () =>{
+        console.log($("#messages").scrollTop())
     }
     
     let _returnValues;
     const postSend = (sendMessage) => {
-        console.log("ステップ：",nowStep);
         const fd = new FormData();
         fd.append('message', sendMessage);
         fd.append('step', nowStep);
@@ -58,14 +57,10 @@ $(function(){
         xhr.send(fd);
         xhr.onreadystatechange = function(){
             if ((xhr.readyState == 4) && (xhr.status == 200)) {
-                console.log(xhr.responseText);
                 _returnValues = JSON.parse(xhr.responseText);
-                _returnValues.reply.forEach(element => {
-                    addOtherMessage(element);
-                });
+                addMessage(_returnValues.reply, false);
                 nowStep = _returnValues.next_step;
                 storage.setItem("step", nowStep);
-                console.log(_returnValues);
             }
         };
     }
