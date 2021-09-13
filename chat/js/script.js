@@ -46,6 +46,11 @@ $(function(){
         }
     });
 
+    setTimeout(function(){
+        bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
+        $("#messages").scrollTop(bottom);
+    },1);
+
     const submit = () =>{
         const input = document.getElementById("bottom_input");
         if(input.value ==  "") return;
