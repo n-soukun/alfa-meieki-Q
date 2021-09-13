@@ -79,7 +79,7 @@ $(function(){
                 bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
                 $("#messages").scrollTop(bottom);
             },1);
+            storage.setItem("chat", JSON.stringify(chat.items));
         });
-        storage.setItem("chat", JSON.stringify(chat.items));
     }
 });
