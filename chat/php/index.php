@@ -23,29 +23,35 @@
   $step = isset($_POST['step']) ? $_POST['step'] : null;
   $message = isset($_POST['message']) ? $_POST['message'] : null;
 
-  //Reactionの準備
-  $next = 0;
-  foreach ($game->steps[$step]->responses as $response){
-    if($response->filter == $message){
-      $next = $response->next;
-      break;
-    }
-  }
-
-  if(!$next == 0){
-    $replayText = $game->steps[$next]->messages->messages;
-    if($game->steps[$next]->messages->return){
-      $next = $step;
-    }
+  if($step == "first" && $message == "first"){
+    $next = 0;
+    $step = 0;
+    $replayText = $game->steps[$step]->messages->messages;
   }else{
-    $replayText = $game->steps[$step]->other->messages;
-    $next = $game->steps[$step]->other->next;
-    if($step != $next){
-      $nextMessages = $game->steps[$next]->messages->messages;
+    //Reactionの準備
+    $next = 0;
+    foreach ($game->steps[$step]->responses as $response){
+      if($response->filter == $message){
+        $next = $response->next;
+        break;
+      }
+    }
+
+    if(!$next == 0){
+      $replayText = $game->steps[$next]->messages->messages;
       if($game->steps[$next]->messages->return){
         $next = $step;
       }
-      array_merge($replayText, array($nextMessages));
+    }else{
+      $replayText = $game->steps[$step]->other->messages;
+      $next = $game->steps[$step]->other->next;
+      if($step != $next){
+        $nextMessages = $game->steps[$next]->messages->messages;
+        if($game->steps[$next]->messages->return){
+          $next = $step;
+        }
+        array_merge($replayText, array($nextMessages));
+      }
     }
   }
 

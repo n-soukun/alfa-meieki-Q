@@ -20,7 +20,8 @@
                 <div id="messages">
                     <div id="wrap_message" v-for="item of items" v-bind:class="[item.main ? 'my_message' : 'other_message']">
                         <div v-for="message of item.messages">
-                            <div class="message">{{ message }}</div>
+                            <div v-if="message.type == 'text'" class="message">{{ message.content }}</div>
+                            <div v-if="message.type == 'img'" class="img"><img :src="message.content" alt=""></div>
                         </div>
                         <div v-if="!item.main" class="user-icon"></div>
                     </div>
