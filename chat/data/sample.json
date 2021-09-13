@@ -1,0 +1,70 @@
+{
+    "steps":[
+        {
+            "messages": {
+                "messages": [
+                    {
+                        "type" : "img",
+                        "delay": 0,
+                        "content": "../img/top.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 0,
+                        "content": "N高等学校を二文字に省略すると？"
+                    }
+                ],
+                "return": false
+            },
+            "responses": [
+                {
+                    "filter": "N高",
+                    "next": 1
+                }
+            ],
+            "other": {
+                "messages": [
+                    {
+                        "type": "text",
+                        "delay": 0,
+                        "content": "違うよ～"
+                    }
+                ],
+                "next": 0
+            }
+        },
+        {
+            "messages": {
+                "messages": [
+                    {
+                        "type" : "text",
+                        "delay": 0,
+                        "content": "大正解！！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 1000,
+                        "content": "これで終わりだよ！"
+                    },
+                    {
+                        "type": "text",
+                        "delay": 2000,
+                        "content":"遊んでくれてありがとう！"
+                    }
+                ],
+                "return": false
+            },
+            "responses": [],
+            "other": {
+                "messages": [
+                    {
+                        "type": "text",
+                        "delay": 0,
+                        "content": "クイズはおしまいだよ"
+                    }
+                ],
+                "next": 1
+            }
+        }
+    ]
+}
