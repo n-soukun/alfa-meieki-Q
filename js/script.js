@@ -1,5 +1,12 @@
 $(function(){
 
+	let game_start = new Vue({
+		el:'#game_start',
+		data:{
+			userName:''
+		}
+	});
+
     let headNav = $("header");
 
 	$(window).on("load", function() {
@@ -11,10 +18,12 @@ $(function(){
 		move_header();
 	});
 
+	$("#button_start").click(start);
+
 	function finish_loading(){
 		$(".loading").fadeOut();
 		$("body").css("overflow", "initial");
-		ScrollReveal().reveal('.top_img', { delay: 240, distance: "40px",origin: "bottom", duration: 1400});
+		ScrollReveal().reveal('.top_content', { delay: 240, distance: "40px",origin: "bottom", duration: 1400});
 		ScrollReveal().reveal('.headline', { delay: 500, duration: 1000});
 		ScrollReveal().reveal('.box_left', { delay: 500, distance: "20px", origin: "right", duration: 800});
 		ScrollReveal().reveal('.box_right', { delay: 500, distance: "20px", origin: "left", duration: 800});
@@ -32,5 +41,15 @@ $(function(){
 			headNav.removeClass("fixed");
 			headNav.animate({"top": "-100px"},300);
 		}
+	}
+
+	function start(){
+		if(game_start.userName == ""){
+			window.alert("ニックネームを入力してください");
+			return;
+		}
+		const storage = localStorage;
+		storage.setItem("name", game_start.userName);
+		window.location.href = './news/';
 	}
 });

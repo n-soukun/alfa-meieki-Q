@@ -176,7 +176,7 @@ header .logo img{
     float: right;
 }
 
-.top_img{
+.top_content{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -184,9 +184,16 @@ header .logo img{
     align-items: center;
     z-index: 0;
 }
-.top_img img{
+.top_content img{
     max-width: 960px;
     width: calc(100% - 40px);
+    z-index: 1;
+}
+
+.top_content p{
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+    font-size: 100px;
+    color: #fff;
     z-index: 1;
 }
 
@@ -257,6 +264,7 @@ header .logo img{
     display: block;
     position: relative;
     text-align: center;
+    width: calc(100% - 40px);
     margin: 60px auto;
     line-height: 46px;
     font-size: 20px;
@@ -328,6 +336,71 @@ header .logo img{
     text-align: left;
     font-size: 18px;
     font-family: tbcgothic-std, sans-serif;
+}
+/*ゲームスタート*/
+.game_start{
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+    margin-bottom: 200px;
+}
+
+.game_start .big_text{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 150px auto 50px;
+    line-height: 50px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.game_start p{
+    display: block;
+    position: relative;
+    text-align: center;
+    width: calc(100% - 40px);
+    max-width: 800px;
+    margin: 60px auto 20px;
+    line-height: 46px;
+    font-size: 20px;
+    color: #fff;
+}
+.game_start #input_username{
+    display: block;
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 500px;
+    height: 40px;
+    margin: 0 auto;
+    border: 4px solid #861616;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.game_start #input_username:focus {
+    outline: none;
+}
+
+.game_start #button_start{
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 200px;
+    height: 60px;
+    margin: 40px auto;
+    border: none;
+    background-color: #861616;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: ro-nikkatsu-sei-kai-std, serif;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.game_start #button_start:hover{
+    background-color: #fff;
+    color: #861616;
 }
 
 /*フッター*/
