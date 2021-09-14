@@ -95,6 +95,8 @@ html,body{
     border-left: 10px solid transparent; 
 }
 
+/*ヘッダー*/
+
 header{
     display: block;
     position: fixed;
@@ -173,6 +175,8 @@ header #user_icon img{
 h2{
     font-size: 20px;
 }
+
+/*メイン*/
 
 main{
     display: flex;
@@ -314,6 +318,8 @@ main{
     margin-right: 20px;
     margin-bottom: 20px;
 }
+
+/*サイドバー*/
 
 #wrap_side{
     width: 360px;

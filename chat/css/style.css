@@ -13,22 +13,77 @@ html,body{
 #app{
     display: block;
     position: relative;
-    margin: 16px;
-    width: 390px;
-    height: calc(100vh - 32px);
+    padding-top: 64px;
+    width: 100%;
+    max-width: 600px;
+    height: calc(100vh - 64px);
     background: #ffffff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
+
+/*ヘッダー*/
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top: 4px solid #1e137c;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+    z-index: 99;
+}
+#header_content{
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+#header_logo{
+    position: absolute;
+    left: 0;
+}
+#header_logo img{
+    height: 40px;
+    padding: 10px 0;
+}
+header #user_info{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 60px;
+}
+header #notice{
+    position: relative;
+    font-size: 24px;
+    margin-right: 20px;
+    color: #1b1b1b;
+    cursor: pointer;
+}
+header #user_icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+header #user_icon img{
+    height: 100%;
+}
+
 #title_bar{
     position: relative;
     height: 60px;
-    background: #00897B;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    background: #fff;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     z-index: 1;
 }
 #title_content{
-    color: #ffffff;
+    color: #444;
     font-size: 22px;
     line-height: 28px;
     margin: 16px;
@@ -56,7 +111,7 @@ html,body{
 }
 .my_message .message{
     display: inline-block;
-    background: #00897B;
+    background: #1e137c;
     color: #ffffff;
     margin-top: 8px;
     padding: 12px 16px;
@@ -148,16 +203,16 @@ html,body{
     display: inline-block;
     margin: 12px 16px;
     padding: 0 16px;
-    border: 1px solid #00897B;
+    border: 1px solid #1e137c;
     border-radius: 24px;
     height: 36px;
     line-height: 36px;
-    color: #00897B;
+    color: #1e137c;
     background: none;
     transition: background-color 0.1s,color 0.1s;
 }
 .bottom_button:hover{
-    background: #00897B;
+    background: #1e137c;
     color: #ffffff;
 }
 #bottom_submit{
