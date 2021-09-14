@@ -49,6 +49,7 @@ $(function(){
 			return;
 		}
 		const storage = localStorage;
+		storage.clear();
 		storage.setItem("name", game_start.userName);
 		window.location.href = './news/';
 	}

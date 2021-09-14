@@ -69,7 +69,7 @@
                     {
                         "type" : "img",
                         "delay": 8000,
-                        "content": "../img/top.jpg"
+                        "content": "./img/sample.png"
                     },
                     {
                         "type" : "text",
@@ -132,7 +132,17 @@
                     {
                         "type" : "img",
                         "delay": 28000,
-                        "content": "../img/top.jpg"
+                        "content": "./img/nazo-2-1.png"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 29000,
+                        "content": "./img/nazo-2-2.png"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 30000,
+                        "content": "./img/nazo-2-3.png"
                     },
                     {
                         "type" : "text",
@@ -142,11 +152,16 @@
                     {
                         "type" : "img",
                         "delay": 33000,
-                        "content": "../img/top.jpg"
+                        "content": "./img/nazo-2-4.png"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 34000,
+                        "content": "./img/nazo-2-5.png"
                     },
                     {
                         "type" : "text",
-                        "delay": 35000,
+                        "delay": 36000,
                         "content": "答えがわかったら、”カタカナ”で送ってくれないか？"
                     }
                 ],
@@ -209,17 +224,17 @@
                     },
                     {
                         "type" : "img",
-                        "delay": 33000,
-                        "content": "../img/top.jpg"
+                        "delay": 34000,
+                        "content": "./img/sample.png"
                     },
                     {
                         "type" : "text",
-                        "delay": 36000,
+                        "delay": 37000,
                         "content": "今回は、これがパスワードと関係があるかもしれないな"
                     },
                     {
                         "type" : "text",
-                        "delay": 39000,
+                        "delay": 40000,
                         "content": "答えがわかったら、”ひらがな”で送ってくれないか？"
                     }
                 ],
@@ -296,13 +311,23 @@
                         "content": "ただ、パソコンにはロックがかかってるんだよな・・・"
                     },
                     {
-                        "type" : "text",
-                        "delay": 40000,
-                        "content": "パスワードのヒントはあるから、考えて見るか"
+                        "type" : "img",
+                        "delay": 38000,
+                        "content": "./img/nazo-4-1.png"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 39000,
+                        "content": "./img/nazo-4-2.png"
                     },
                     {
                         "type" : "text",
-                        "delay": 43000,
+                        "delay": 42000,
+                        "content": "でも、パスワードのヒントはあるからなんとかなるかもな！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 45000,
                         "content": "答えがわかったら、”4桁の数字”で送ってくれないか？"
                     }
                 ],
@@ -310,7 +335,7 @@
             },
             "responses": [
                 {
-                    "filter": "0000",
+                    "filter": "1228",
                     "next": 5
                 }
             ],
@@ -361,7 +386,7 @@
                     {
                         "type" : "img",
                         "delay": 20000,
-                        "content": "../img/top.jpg"
+                        "content": "./img/nazo-5.png"
                     },
                     {
                         "type" : "text",

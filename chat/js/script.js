@@ -48,7 +48,7 @@ $(function(){
     setTimeout(function(){
         bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
         $("#messages").scrollTop(bottom);
-    },1);
+    },10);
 
     const submit = () =>{
         const input = document.getElementById("bottom_input");
@@ -93,11 +93,30 @@ $(function(){
         messages.forEach(async message => {
             await sleep(message.delay);
             chat.items[chat.items.length - 1].messages.push(replaceMessage(message));
+            if(message.type == "img"){
+                time = 10;
+            }else{
+                time = 1;
+            }
             setTimeout(function(){
                 bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
                 $("#messages").scrollTop(bottom);
-            },1);
+            },time);
             storage.setItem("chat", JSON.stringify(chat.items));
         });
     }
+
+    /*画像の拡大機能*/
+    $("body").on("click",".img",function(){
+        const img_url = $(this).children('img').attr('src');
+        $("body").append(`
+            <div id="image_viewer">
+                <img src="${img_url}">
+                <div id="viewer_close">×</div>
+            </div>
+        `);
+    });
+    $("body").on("click","#viewer_close",function(){
+        $("#image_viewer").remove();
+    });
 });
