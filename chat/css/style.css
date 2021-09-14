@@ -18,7 +18,6 @@ html,body{
     max-width: 600px;
     height: calc(100vh - 64px);
     background: #ffffff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 /*ヘッダー*/
@@ -76,21 +75,38 @@ header #user_icon img{
 
 #title_bar{
     position: relative;
-    height: 60px;
+    height: 40px;
+    padding-top: 10px;
     background: #fff;
-    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     z-index: 1;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+#title_icon{
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin: 0 12px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#title_icon img{
+    height: 100%;
 }
 #title_content{
+    display: inline-block;
+    vertical-align: middle;
     color: #444;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 28px;
-    margin: 16px;
+    margin: 6px 0;
 }
 #wrap_messages{
     position: relative;
-    height: calc(100% - 121px);
+    height: calc(100% - 111px);
 }
 #messages{
     display: block;
@@ -133,6 +149,8 @@ header #user_icon img{
     height: 48px;
     border-radius: 50%;
     background-color: #F1F1F2;
+    background-image: url("../img/user2.png");
+    background-size: cover;
 }
 .other_message .message{
     display: inline-block;

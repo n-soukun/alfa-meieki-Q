@@ -1,10 +1,8 @@
 $(function(){
 
     function sleep(msec) {
-        return new Promise(function(resolve) {
-      
-           setTimeout(function() {resolve()}, msec);
-      
+        return new Promise(function(resolve) { 
+            setTimeout(function() {resolve()}, msec);
         })
     }
 
@@ -27,6 +25,7 @@ $(function(){
     }
 
     const storage = localStorage;
+    const userName =  storage.getItem("name");
     let nowStep =  storage.getItem("step");
     if(nowStep === null){
         nowStep = "first";
@@ -61,6 +60,14 @@ $(function(){
 
     $("#bottom_submit").on("click", submit);
 
+    const replaceMessage = (obj)=>{
+        if(obj.type != "text")return obj;
+
+        obj.content = obj.content.replace(/{username}/g, userName);
+
+        return obj;
+    }
+
     /**
      * チャットにメッセージを追加する
      * @param {Array} messages 
@@ -79,7 +86,7 @@ $(function(){
         chat.items.push({main: main,messages: []});
         messages.forEach(async message => {
             await sleep(message.delay);
-            chat.items[chat.items.length - 1].messages.push(message);
+            chat.items[chat.items.length - 1].messages.push(replaceMessage(message));
             setTimeout(function(){
                 bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
                 $("#messages").scrollTop(bottom);

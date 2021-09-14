@@ -58,17 +58,22 @@
                     },
                     {
                         "type" : "text",
-                        "delay": 2000,
-                        "content": "実は、教卓の上にパソコンがあるんだが、パスワードを入れると何かできるかもしれない。"
+                        "delay": 4000,
+                        "content": "{username}ならそう言ってくれると信じてたよ"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 7000,
+                        "content": "実は、目の前の教卓にパソコンがあるんだが、パスワードを入れると何かできるかもしれない。"
                     },
                     {
                         "type" : "img",
-                        "delay": 2200,
+                        "delay": 8000,
                         "content": "../img/top.jpg"
                     },
                     {
                         "type" : "text",
-                        "delay": 3000,
+                        "delay": 11000,
                         "content": "答えがわかったら、”半角英数字”で送ってくれないか？"
                     }
                 ],
@@ -84,7 +89,7 @@
                 "messages": [
                     {
                         "type": "text",
-                        "delay": 0,
+                        "delay": 1000,
                         "content": "うーん、違うみたいだ..."
                     }
                 ],
@@ -96,50 +101,60 @@
                 "messages": [
                     {
                         "type" : "text",
-                        "delay": 500,
+                        "delay": 2000,
                         "content": "なるほど！スマホの自撮りモードで写すと、反転して読めるようになるのか！"
                     },
                     {
                         "type" : "text",
-                        "delay": 1000,
+                        "delay": 4000,
                         "content": "お！！"
                     },
                     {
                         "type" : "text",
-                        "delay": 2000,
+                        "delay": 7000,
                         "content": "扉の鍵が開いたぞ！"
                     },
                     {
                         "type" : "text",
-                        "delay": 3000,
+                        "delay": 10000,
                         "content": "あたりを探索してみるから、ちょっと待っててくれ。"
                     },
                     {
                         "type" : "text",
-                        "delay": 13000,
-                        "content": "階段のシャッターが降りてて、先へ進むにはパスワードを入れる必要があるみたい"
+                        "delay": 23000,
+                        "content": "階段のシャッターが降りてて、先へ進むにはパスワードを入れる必要があるみたいなんだ"
                     },
                     {
                         "type" : "text",
-                        "delay": 14000,
-                        "content": "そういえば、音楽室にこんなプリントがあったけど、パスワードと関係があるのかな？"
+                        "delay": 27000,
+                        "content": "そういえば、階段にこんなプリントが落ちてたけど、パスワードと関係あるのか？"
                     },
                     {
                         "type" : "img",
-                        "delay": 14500,
+                        "delay": 28000,
                         "content": "../img/top.jpg"
                     },
                     {
                         "type" : "text",
-                        "delay": 14500,
-                        "content": "答えがわかったら、”ひらがな”で送ってくれない？"
+                        "delay": 32000,
+                        "content": "一応、教室の写真も送っとく"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 33000,
+                        "content": "../img/top.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 35000,
+                        "content": "答えがわかったら、”カタカナ”で送ってくれないか？"
                     }
                 ],
                 "return": false
             },
             "responses": [
                 {
-                    "filter": "こたえはげいじゅつ",
+                    "filter": "コタエハゲイジュツ",
                     "next": 3
                 }
             ],
@@ -159,18 +174,53 @@
                 "messages": [
                     {
                         "type" : "text",
-                        "delay": 500,
-                        "content": "なるほど、それぞれの答えを組み合わせたら一つの言葉になったんだね！"
+                        "delay": 2000,
+                        "content": "なるほど、それぞれの答えを組み合わせると一つの言葉になるのか！"
                     },
                     {
                         "type" : "text",
-                        "delay": 1500,
-                        "content": "試しに入力してみるね・・・"
+                        "delay": 4000,
+                        "content": "よし！試しに入力してみよう"
                     },
                     {
                         "type" : "text",
-                        "delay": 4500,
-                        "content": "どうやら解錠に成功したみたい！"
+                        "delay": 10000,
+                        "content": "お、どうやら解錠に成功したみたいだな"
+                    },                    
+                    {
+                        "type" : "text",
+                        "delay": 13000,
+                        "content": "これで、2階に進むことができる！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 15000,
+                        "content": "それじゃあ探索してくるから、ちょっと待っててくれ。"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 30000,
+                        "content": "案の定、1階への階段はシャッターが閉まってたな。"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 33000,
+                        "content": "それと、家庭科室にこんなプリントが置いてあった"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 33000,
+                        "content": "../img/top.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 36000,
+                        "content": "今回は、これがパスワードと関係があるかもしれないな"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 39000,
+                        "content": "答えがわかったら、”ひらがな”で送ってくれないか？"
                     }
                 ],
                 "return": false
@@ -190,6 +240,137 @@
                     }
                 ],
                 "next": 3
+            }
+        },
+        {
+            "messages": {
+                "messages": [
+                    {
+                        "type" : "text",
+                        "delay": 2000,
+                        "content": "なるほど、共通する材料がキーだったのか！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 4000,
+                        "content": "はやくここから出てうまいもん食いたいな・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 8000,
+                        "content": "よし！とりあえず、パスワードを入力してみよう"
+                    },                    
+                    {
+                        "type" : "text",
+                        "delay": 13000,
+                        "content": "お、開いたな！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 15000,
+                        "content": "それじゃあ、1階を探索してみるか"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 18000,
+                        "content": "何事もなく出られればいいんだが・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 28000,
+                        "content": "とりあえず、昇降口の近くまで来たけど・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 32000,
+                        "content": "爆弾があって出られそうにないんだ"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 34000,
+                        "content": "でも、爆弾を制御してるパソコンを見つけたから、もしかしたら解除できるかも！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 37000,
+                        "content": "ただ、パソコンにはロックがかかってるんだよな・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 40000,
+                        "content": "パスワードのヒントはあるから、考えて見るか"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 43000,
+                        "content": "答えがわかったら、”4桁の数字”で送ってくれないか？"
+                    }
+                ],
+                "return": false
+            },
+            "responses": [
+                {
+                    "filter": "0000",
+                    "next": 5
+                }
+            ],
+            "other": {
+                "messages": [
+                    {
+                        "type": "text",
+                        "delay": 0,
+                        "content": "うーん、違うみたいだね..."
+                    }
+                ],
+                "next": 4
+            }
+        },
+        {
+            "messages": {
+                "messages": [
+                    {
+                        "type" : "text",
+                        "delay": 2000,
+                        "content": "なるほど、単純な計算じゃなくて画数の計算だったのか！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 4000,
+                        "content": "やっぱ{username}は頭いいな！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 8000,
+                        "content": "よし！さっそく、パソコンを開いてみよう"
+                    },                    
+                    {
+                        "type" : "text",
+                        "delay": 11000,
+                        "content": "なになに・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 15000,
+                        "content": "爆弾を解除するためのパスワードが必要か・・・"
+                    }
+                ],
+                "return": false
+            },
+            "responses": [
+                {
+                    "filter": "cancel",
+                    "next": 6
+                }
+            ],
+            "other": {
+                "messages": [
+                    {
+                        "type": "text",
+                        "delay": 0,
+                        "content": "うーん、違うみたいだね..."
+                    }
+                ],
+                "next": 5
             }
         }
     ]
