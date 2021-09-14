@@ -61,6 +61,12 @@ $(function(){
     $("#bottom_submit").on("click", submit);
 
     const replaceMessage = (obj)=>{
+        if(obj.type == "command"){
+            if(obj.content == "game_clear"){
+                window.location.href = '../ending/';
+                return obj;
+            }
+        }
         if(obj.type != "text")return obj;
 
         obj.content = obj.content.replace(/{username}/g, userName);

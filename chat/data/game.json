@@ -352,6 +352,31 @@
                         "type" : "text",
                         "delay": 15000,
                         "content": "爆弾を解除するためのパスワードが必要か・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 19000,
+                        "content": "お、パソコンの画面になにか出てきたぞ"
+                    },
+                    {
+                        "type" : "img",
+                        "delay": 20000,
+                        "content": "../img/top.jpg"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 23000,
+                        "content": "なんだこりゃ、意味がわからん・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 26000,
+                        "content": "でも、これを解けば出られるかもなんだよな！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 29000,
+                        "content": "答えがわかったら、”半角英数字”で送ってくれないか？"
                     }
                 ],
                 "return": false
@@ -371,6 +396,84 @@
                     }
                 ],
                 "next": 5
+            }
+        },
+        {
+            "messages": {
+                "messages": [
+                    {
+                        "type" : "text",
+                        "delay": 2000,
+                        "content": "なるほど、アルファベットがずれてたのか！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 4000,
+                        "content": "それじゃあ・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 6000,
+                        "content": "入力しよう！！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 12000,
+                        "content": "爆弾のLEDが消えていく・・・"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 16000,
+                        "content": "どうやら、成功したみたいだな。"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 19000,
+                        "content": "助かったのか"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 21000,
+                        "content": "よかった、、、生きて帰れるんだ。"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 24000,
+                        "content": "{username}、ほんとありがとな！"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 27000,
+                        "content": "とりあえず、俺たちは外の警察と合流するよ。"
+                    },
+                    {
+                        "type" : "text",
+                        "delay": 30000,
+                        "content": "だから、また後でな！ありがとう！！"
+                    },
+                    {
+                        "type" : "command",
+                        "delay": 35000,
+                        "content": "game_clear"
+                    }
+                ],
+                "return": false
+            },
+            "responses": [],
+            "other": {
+                "messages": [
+                    {
+                        "type": "text",
+                        "delay": 2000,
+                        "content": "ほんっとうにありがとな！"
+                    },
+                    {
+                        "type": "text",
+                        "delay": 4000,
+                        "content": "{username}は命の恩人だよ！"
+                    }
+                ],
+                "next": 6
             }
         }
     ]
