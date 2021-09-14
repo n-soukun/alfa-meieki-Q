@@ -3,6 +3,60 @@ html,body{
     padding: 0;
     background: #F5F5F6;
 }
+
+/*通知一覧*/
+#fixed_menu{
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+    top: 64px;
+    inset: 0;
+    margin: auto;
+    z-index: 100;
+}
+
+#notice_body{
+    position: absolute;
+    top: 74px;
+    right: 0;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+}
+
+#notice_head{
+    background: #f5f5f6;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#notice_box{
+    width: calc(100% - 20px);
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.1s;
+}
+
+#notice_box:hover{
+    background-color: #ecf4ff;
+}
+
+#notice_box h3{
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+#notice_box p{
+    margin: 0;
+    font-size: 12px;
+    color: #444;
+}
+
 header{
     display: block;
     position: fixed;
@@ -42,9 +96,27 @@ header #user_info{
 }
 
 header #notice{
+    position: relative;
     font-size: 24px;
     margin-right: 20px;
     color: #1b1b1b;
+    cursor: pointer;
+}
+
+header #notice span{
+    position: absolute;
+    top: 4px;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background: #f00;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 6px;
+    font-weight: bold;
+    line-height: 12px;
+    text-align: center;
 }
 
 header #user_icon{
@@ -53,6 +125,7 @@ header #user_icon{
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 header #user_icon img{
