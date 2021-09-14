@@ -17,13 +17,46 @@ header{
 }
 
 #header_content{
+    position: relative;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-header img{
+#header_logo{
+    position: absolute;
+    left: 0;
+}
+
+#header_logo img{
     height: 60px;
+}
+
+header #user_info{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
+    height: 60px;
+}
+
+header #notice{
+    font-size: 24px;
+    margin-right: 20px;
+    color: #1b1b1b;
+}
+
+header #user_icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header #user_icon img{
+    height: 100%;
 }
 
 h2{
