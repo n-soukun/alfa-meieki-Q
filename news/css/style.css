@@ -16,6 +16,20 @@ header{
     z-index: 99;
 }
 
+#header_content{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header img{
+    height: 60px;
+}
+
+h2{
+    font-size: 20px;
+}
+
 main{
     display: flex;
     position: relative;
@@ -41,10 +55,120 @@ main{
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#main_body p{
-    width: calc(100% - 40px);
+#url_tree{
+    font-size: 14px;
+    color: #666;
+}
+
+#main_head h1{
+    margin-bottom: 8px;
+}
+
+#head_footer{
+    position: relative;
+    width: 100%;
+    height: 24px;
+}
+
+#head_info{
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+#head_info #info_comment{
+    margin-left: 8px;
+}
+
+#head_info #info_comment i{
+    margin-right: 4px;
+}
+
+#head_share{
+    position: absolute;
+    right: 0;
+    cursor: default;
+}
+
+#head_share i{
+    margin-left: 4px;
+    background-color: #1e137c;
+    color: #fff;
+    padding: 6px;
+    cursor: pointer;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+#head_share i:hover{
+    background-color: #fff;
+    color: #1e137c;
+}
+
+#main_body{
     padding: 0 20px;
+}
+
+#main_body p{
+    width: 100%;
     margin: 20px auto;
+}
+
+#main_body #body_footer{
+    text-align: right;
+}
+
+#link-list{
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+#link-list a{
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+
+.underline{
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#box-list{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+#box-list a{
+    text-decoration: none;
+}
+
+#box-list li{
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#link-list a:hover,#box-list a:hover{
+    text-decoration: underline;
+}
+
+#main_ad{
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+#main_ad img{
+    float: left;
+}
+
+.ad_margin{
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 #wrap_side{
@@ -58,5 +182,12 @@ main{
 }
 
 #side_ad img{
-    width: 100%;
+    width: calc(100% - 2px);
+    border: 1px solid #dddddd;
 }
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
