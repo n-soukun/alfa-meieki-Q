@@ -6,5 +6,5 @@ $(function(){
 
     setTimeout(function(){
         $("#story_guide").fadeIn();
-    },7000);
+    },15000);
 });

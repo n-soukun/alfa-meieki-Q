@@ -82,6 +82,7 @@ html,body{
     padding: 10px;
     background: #3a59bd;
     color: #fff;
+    z-index: 100;
 }
 
 .mes_box::before{
