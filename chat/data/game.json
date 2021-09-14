@@ -76,7 +76,7 @@
             },
             "responses": [
                 {
-                    "filter": "Error",
+                    "filter": "error",
                     "next": 2
                 }
             ],
