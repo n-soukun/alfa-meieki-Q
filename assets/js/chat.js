@@ -12,7 +12,7 @@ $(function(){
         fd.append('message', sendMessage);
         fd.append('step', nowStep);
         const xhr = new XMLHttpRequest();
-        xhr.open('POST','php/index.php');
+        xhr.open('POST','../assets/php/index.php');
         xhr.send(fd);
         xhr.onreadystatechange = function(){
             if ((xhr.readyState == 4) && (xhr.status == 200)) {
@@ -63,11 +63,14 @@ $(function(){
     const replaceMessage = (obj)=>{
         if(obj.type == "command"){
             if(obj.content == "game_clear"){
+                storage.setItem("status", "clear");
                 window.location.href = '../ending/';
                 return obj;
             }
+        }else if(obj.type == "img"){
+            obj.content = `../assets/img/nazo/${obj.content}`;
+            return obj;
         }
-        if(obj.type != "text")return obj;
 
         obj.content = obj.content.replace(/{username}/g, userName);
 

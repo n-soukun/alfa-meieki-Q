@@ -51,6 +51,10 @@ $(function(){
 		const storage = localStorage;
 		storage.clear();
 		storage.setItem("name", game_start.userName);
-		window.location.href = './news/';
+		storage.setItem("status", "news");
+		$(".black_out").fadeIn();
+		setTimeout(function(){
+			window.location.href = './news/';
+		},1000);
 	}
 });

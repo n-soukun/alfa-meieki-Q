@@ -4,6 +4,17 @@ html,body{
     background: #F5F5F6;
 }
 
+/*white_in*/
+.black_in{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 100;
+}
+
 /*通知一覧*/
 #fixed_menu{
     position: fixed;
