@@ -1,5 +1,14 @@
 /*Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+:root{
+    --primary-color: #881616;
+    --bg-color-dark-alpha: rgba(0,0,0,0.76);
+    --bg-color-dark: #1b1b1b;
+    --color-black: #000;
+    --color-white: #fff;
+}
 
 html{
     scroll-behavior: smooth;
@@ -14,7 +23,7 @@ html,body{
 }
 
 body{
-    background: #000;
+    background: var(--bg-color-dark);
     text-align: center;
     height: 100vh;
     overflow: hidden;/*for loading*/
@@ -26,14 +35,18 @@ body{
     padding: 0;
     font-size: 120px;
     color: #fff;
-    border-bottom: 6px solid #861616;
+    border-bottom: 6px solid var(--primary-color);
     line-height: 120px;
     font-family: ro-nikkatsu-sei-kai-std, serif;
 }
 
+h2 img{
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
+}
+
 .dark_bg{
     position: relative;
-    background: rgba(0, 0, 0, 0.76);
+    background: var(--bg-color-dark-alpha);
 }
 
 .dark_bg::before{
@@ -44,7 +57,7 @@ body{
     left: 0;
     width: 100%;
     height: 90px;
-    background: linear-gradient(0deg, rgba(0,0,0,0.76), rgba(0,0,0,1));
+    background: linear-gradient(0deg, var(--bg-color-dark-alpha), rgba(0,0,0,1));
     z-index: 1;
 }
 
@@ -56,7 +69,7 @@ body{
     left: 0;
     width: 100%;
     height: 90px;
-    background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.76));
+    background: linear-gradient(0deg, rgba(0,0,0,1), var(--bg-color-dark-alpha));
     z-index: 1;
 }
 
@@ -81,7 +94,7 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000;
+    background: var(--color-black);
     z-index: 100;
 }
 
@@ -106,7 +119,7 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000;
+    background: var(--color-black);
     z-index: 100;
 }
 
@@ -117,7 +130,7 @@ header{
     top: -100px;
     width: 100%;
     height: 100px;
-    background: #000;
+    background: var(--color-black);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     color: #fff;
     z-index: 99;
@@ -160,7 +173,7 @@ header .logo img{
     left: 0;
     width: 100%;
     height: 120px;
-    background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.76));
+    background: linear-gradient(0deg, rgba(0,0,0,1), var(--bg-color-dark-alpha));
     z-index: 1;
 }
 
@@ -177,19 +190,19 @@ header .logo img{
     justify-content: center;
     align-items: center;
     height:80px;
-    padding: 0 12px;
+    padding: 0 20px;
     float: left;
 }
 
 .top_header .left img{
-    height: calc(100% - 24px);
+    height: calc(100% - 28px);
 }
 
 .top_header .right{
     float: right;
     line-height: 80px;
     font-size: 14px;
-    padding: 0 12px;
+    padding: 0 20px;
 }
 
 .top_content{
@@ -220,7 +233,7 @@ header .logo img{
     text-align: center;
     width: 200px;
     background: #fff;
-    color: #000;
+    color: var(--color-black);
     z-index: 99;
 }
 
@@ -262,8 +275,17 @@ header .logo img{
 
 /*あらすじ*/
 .story{
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 200px;
     font-family: ro-nikkatsu-sei-kai-std, serif;
-    margin-bottom: 200px;
+}
+
+.story h2{
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
 }
 
 .story .big_text{
@@ -272,18 +294,18 @@ header .logo img{
     text-align: center;
     margin: 150px auto;
     line-height: 50px;
-    font-size: 28px;
+    font-size: 24px;
     color: #fff;
 }
 
 .story p{
     display: block;
     position: relative;
-    text-align: center;
-    width: calc(100% - 40px);
+    text-align: left;
+    width: 100%;
     margin: 60px auto;
     line-height: 46px;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
 }
 
@@ -294,6 +316,14 @@ header .logo img{
     height: auto;
     background-image: url(../img/wall01-768x576.png);
     z-index: -1;
+}
+
+.wrap_boxs h2{
+    margin: 0 auto;
+}
+.wrap_boxs h2 img{
+    margin: 60px auto;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
 }
 
 .boxs_dark{
@@ -329,7 +359,7 @@ header .logo img{
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 1px solid var(--color-black);
     font-size: 54px;
     text-align: center;
 }
@@ -359,11 +389,15 @@ header .logo img{
     margin-bottom: 200px;
 }
 
+.game_start h2{
+    margin-top: 100px;
+}
+
 .game_start .big_text{
     display: block;
     position: relative;
     text-align: center;
-    margin: 150px auto 50px;
+    margin: 50px auto;
     line-height: 50px;
     font-size: 28px;
     color: #fff;
@@ -387,16 +421,18 @@ header .logo img{
     max-width: 500px;
     height: 40px;
     margin: 0 auto;
-    border: 4px solid #861616;
-    border-radius: 10px;
+    background: var(--color-black);
+    border: 1px solid #444;
     text-align: center;
     font-size: 24px;
+    color: #fff;
     font-family: ro-nikkatsu-sei-kai-std, serif;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
 }
 
 .game_start #input_username:focus {
     outline: none;
+    border-color: var(--primary-color);
 }
 
 .game_start #button_start{
@@ -406,7 +442,7 @@ header .logo img{
     height: 60px;
     margin: 40px auto;
     border: none;
-    background-color: #861616;
+    background-color: var(--primary-color);
     color: #fff;
     font-size: 40px;
     cursor: pointer;
@@ -416,7 +452,7 @@ header .logo img{
 
 .game_start #button_start:hover{
     background-color: #fff;
-    color: #861616;
+    color: var(--primary-color);
 }
 
 /*フッター*/
@@ -424,7 +460,7 @@ footer{
     display: block;
     padding: 40px 0;
     width: 100%;
-    background: #000;
+    background: var(--color-black);
     text-align: center;
 }
 footer p{
