@@ -1,5 +1,9 @@
 $(function(){
 
+    console.log("ヒントの表示や、入力欄に不具合がある可能性があります。")
+    console.log("不具合が発生した場合は、ページをリロードしてください。")
+    console.log("by Webページ制作担当")
+
     function sleep(msec) {
         return new Promise(function(resolve) { 
             setTimeout(function() {resolve()}, msec);
@@ -92,7 +96,11 @@ $(function(){
     }
 
     const addMessageWithDelay = (messages, main)=>{
+        $("#bottom_input").prop('disabled', true);
+        $("#bottom_input").attr('placeholder', '北園 実 が入力中');
         chat.items.push({main: main,messages: []});
+        let i = 0;
+        const messageLength =  messages.length;
         messages.forEach(async message => {
             await sleep(message.delay);
             chat.items[chat.items.length - 1].messages.push(replaceMessage(message));
@@ -102,8 +110,13 @@ $(function(){
                 time = 1;
             }
             setTimeout(function(){
+                i ++;
                 bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
                 $("#messages").scrollTop(bottom);
+                if(i == messageLength){
+                    $("#bottom_input").prop('disabled', false);
+                    $("#bottom_input").attr('placeholder', 'ここにメッセージを入力');
+                }
             },time);
             storage.setItem("chat", JSON.stringify(chat.items));
         });
@@ -115,9 +128,15 @@ $(function(){
         $("body").append(`
             <div id="image_viewer">
                 <img src="${img_url}">
-                <div id="viewer_close">×</div>
+                <div id="viewer_control">
+                    <div id="viewer_flip" class="viwer_button">左右反転</div>
+                    <div id="viewer_close" class="viwer_button">×</div>
+                </div>
             </div>
         `);
+    });
+    $("body").on("click","#viewer_flip",function(){
+        $("#image_viewer img").toggleClass("flip_img");
     });
     $("body").on("click","#viewer_close",function(){
         $("#image_viewer").remove();

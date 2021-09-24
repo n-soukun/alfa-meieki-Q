@@ -46,23 +46,45 @@ html,body{
     margin: auto;
 }
 
-#viewer_close{
+#viewer_control{
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 32px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
+    width: initial;
+    height: 30px;
+    padding: 5px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.26);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.viwer_button{
+    display: inline-block;
+    border-radius: 40px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    padding: 0 6px;
+    vertical-align: middle;
     cursor: pointer;
+    color: #fff;
     transition: background-color 0.1s;
 }
-#viewer_close:hover{
+
+#viewer_close{
+    width: 30px;
+    padding: 0;
+    text-align: center;
+    font-size: 32px;
+}
+.viwer_button:hover{
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flip_img{
+    transform: scale(-1, 1);
 }
 
 /*ヘッダー*/
