@@ -1,13 +1,37 @@
+let scroollBottom = true;
+function messagesOnScroll() {
+    const bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight();
+    const CurrentScroollTop = $("#messages").scrollTop();
+    scroollBottom = (bottom - 10) <= CurrentScroollTop;
+}
+
 $(function(){
 
     console.log("ヒントの表示や、入力欄に不具合がある可能性があります。")
     console.log("不具合が発生した場合は、ページをリロードしてください。")
     console.log("by Webページ制作担当")
 
+    	//スマホのアドレスバー対策
+	const resizeTopBox = () =>{
+		$('#app').css('height', $(window).height() - 64);
+	}
+	resizeTopBox();
+	$(window).resize(function() {
+		resizeTopBox();
+        if(scroollBottom){
+            scroollChat();
+        }
+	});
+
     function sleep(msec) {
         return new Promise(function(resolve) { 
             setTimeout(function() {resolve()}, msec);
         })
+    }
+
+    function scroollChat() {
+        bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
+        $("#messages").scrollTop(bottom);
     }
 
     let _returnValues;
@@ -50,8 +74,7 @@ $(function(){
     });
 
     setTimeout(function(){
-        bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
-        $("#messages").scrollTop(bottom);
+        scroollChat();
     },10);
 
     const submit = () =>{
@@ -89,8 +112,7 @@ $(function(){
     const addMessage = (messages, main) =>{
         chat.items.push({main: main,messages: messages});
         setTimeout(function(){
-            bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
-            $("#messages").scrollTop(bottom);
+            scroollChat();
         },1);
         storage.setItem("chat", JSON.stringify(chat.items));
     }
@@ -111,8 +133,7 @@ $(function(){
             }
             setTimeout(function(){
                 i ++;
-                bottom = $("#messages")[0].scrollHeight - $("#messages").innerHeight() + 64;
-                $("#messages").scrollTop(bottom);
+                scroollChat();
                 if(i == messageLength){
                     $("#bottom_input").prop('disabled', false);
                     $("#bottom_input").attr('placeholder', 'ここにメッセージを入力');

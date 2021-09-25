@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="theme-color" content="#1e137c">
     <title>北園 実｜Nちゃっと</title>
     <link rel="stylesheet" href="../assets/css/chat.css">
     <script src="https://kit.fontawesome.com/9dacc9a3b2.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
                 <div id="title_content">北園 実</div>
             </div>
             <div id="wrap_messages">
-                <div id="messages">
+                <div id="messages" onscroll="messagesOnScroll()">
                     <div id="wrap_message" v-for="item of items" v-bind:class="[item.main ? 'my_message' : 'other_message']">
                         <div v-for="message of item.messages">
                             <div v-if="message.type == 'text'" class="message">{{ message.content }}</div>
