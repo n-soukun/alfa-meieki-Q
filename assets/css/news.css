@@ -31,7 +31,7 @@ html,body{
     display: none;
     position: absolute;
     top: 74px;
-    right: 0;
+    right: 20px;
     width: 300px;
     background: #fff;
     border-radius: 10px;
@@ -88,6 +88,7 @@ html,body{
 
 .mes_box{
     position: absolute;
+    max-width: calc(100vw - 40px);
     top: 4px;
     right: 10px;
     padding: 10px;
@@ -221,6 +222,7 @@ main{
 
 #main_head h1{
     margin-bottom: 8px;
+    line-height: 36px;
 }
 
 #head_footer{
@@ -351,4 +353,54 @@ main{
     content: "";
     display: block;
     clear: both;
- }
+}
+
+footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+    background: #35355a;
+    color: #fff;
+}
+
+.sp_480{
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    main{
+        flex-direction: column;
+    }
+    #wrap_main{
+        width: calc(100% - 40px);
+    }
+    #wrap_side{
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+    .pc_1024{
+        display: none;
+    }
+}
+@media screen and (max-width:480px){
+    #wrap_main{
+        margin-top: 0;
+    }
+    #main_head h1{
+        font-size: 30px;
+    }
+    #main_head{
+        width: 100%;
+    }
+    #main_body{
+        padding: 0;
+    }
+    .pc_480{
+        display: none;
+    }
+    .sp_480{
+        display: block;
+    }
+}
