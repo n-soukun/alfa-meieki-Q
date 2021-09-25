@@ -1,5 +1,14 @@
 $(function(){
 
+	//スマホのアドレスバー対策
+	const resizeTopBox = () =>{
+		$('.top_box').css('height', 120 + $(window).height());
+	}
+	resizeTopBox();
+	$(window).resize(function() {
+		resizeTopBox();
+	});
+
 	let game_start = new Vue({
 		el:'#game_start',
 		data:{
