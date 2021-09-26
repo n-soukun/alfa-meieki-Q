@@ -3,9 +3,9 @@ $(function(){
     const storage = localStorage;
     if(storage.status != "news")$(".black_in").hide();
 
-    $("#notice").on("click", function(){
+    $(".notice_button").on("click", function(){
         $("#story_guide").hide();
-        $('#notice_body').toggle();
+        $('#notice_body').toggleClass("active");
     });
 
     setTimeout(function(){

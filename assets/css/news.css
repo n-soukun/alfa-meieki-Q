@@ -20,7 +20,7 @@ html,body{
     position: fixed;
     width: 100%;
     max-width: 1200px;
-    top: 64px;
+    top: 0;
     inset: 0;
     margin: auto;
     z-index: 100;
@@ -38,6 +38,10 @@ html,body{
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
     overflow: hidden;
     pointer-events: initial;
+}
+
+#fixed_menu .active{
+    display: block;
 }
 
 #notice_head{
@@ -74,6 +78,62 @@ html,body{
     margin: 0;
     font-size: 12px;
     color: #444;
+}
+
+.sp_close_button{
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+
+    #notice_body{
+        display: block;
+        right: initial;
+        top: 0;
+        left: 100vw;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        background: #f5f5f6;
+        transition: left 0.2s;
+        z-index: 999;
+    }
+
+    #fixed_menu .active{
+        left: 0vw;
+        transition: left 0.2s;
+    }
+
+    #notice_head{
+        position: relative;
+        background: #fff;
+        height: 50px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+
+    .sp_close_button{
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        left: 0;
+    }
+
+    #notice_box{
+        width: calc(100% - 40px);
+        margin: auto;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
 }
 
 #story_guide{
@@ -127,11 +187,14 @@ header{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    height: 60px;
 }
 
 #header_logo{
     position: absolute;
-    left: 0;
+    top: 0;
+    left: 20px;
+    height: 60px;
 }
 
 #header_logo img{
@@ -185,7 +248,12 @@ header #user_icon img{
 }
 
 h2{
+    margin-top: 30px;
     font-size: 20px;
+}
+
+a{
+    color: #0000ee;
 }
 
 /*メイン*/
@@ -203,7 +271,7 @@ main{
 
 #wrap_main{
     width: calc(100% - 441px);
-    margin: 20px 0;
+    margin: 20px 0 0;
     padding: 20px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -286,8 +354,11 @@ main{
 }
 
 #link-list a{
-    margin-bottom: 4px;
     text-decoration: none;
+}
+#link-list a li{
+    line-height: 20px;
+    margin-bottom: 6px;
 }
 
 .underline{
@@ -297,7 +368,7 @@ main{
 }
 
 #box-list{
-    margin: 0;
+    margin: 0 0 30px;
     list-style: none;
     padding: 0;
 }
@@ -318,18 +389,70 @@ main{
 }
 
 #main_ad{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
     max-width: 620px;
     margin: 0 auto;
 }
 
-#main_ad img{
-    float: left;
+.news_boxs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    padding: 0;
 }
 
-.ad_margin{
-    margin-right: 20px;
+.news_box{
+    width: calc(100% / 3 - 10px);
     margin-bottom: 20px;
+}
+
+.news_box_img{
+    position: relative;
+    width: 100%;
+    background: #f5f5f6;
+}
+.news_box_img::before{
+    content:"";
+    display: block;
+    padding-top: 56.25%; /* 高さを幅の75%に固定 */
+}
+
+.news_box_img_inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.news_box_content{
+    position: relative;
+    min-height: 60px;
+}
+
+.news_box_text_dummy{
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 22px;
+    background: #f5f5f6;
+}
+
+.news_box_text_dummy::before{
+    content: " ";
+    position: absolute;
+    top: 28px;
+    width: 70%;
+    height: 22px;
+    background: #f5f5f6;
 }
 
 /*サイドバー*/
@@ -340,15 +463,18 @@ main{
 }
 
 #side_ad{
-    width: calc(100% - 40px);
     margin: 0 auto;
+    text-align: center;
 }
 
-#side_ad img{
-    width: calc(100% - 2px);
+.large_ad{
+    width: calc(100% - 40px);
+}
+
+.ad_border{
     border: 1px solid #dddddd;
+    width: calc(100% - 2px);
 }
-
 .clearfix::after {
     content: "";
     display: block;
@@ -384,7 +510,25 @@ footer{
         display: none;
     }
 }
+@media screen and (max-width: 768px){
+    .news_box{
+        width: calc(100% / 2 - 10px);
+    }
+}
 @media screen and (max-width:480px){
+    #story_guide{
+        top: 60px;
+        height: calc(100vh -60px);
+    }
+    header{
+        border: none;
+    }
+    #header_logo{
+        padding: 10px 0;
+    }
+    #header_logo img{
+        height: calc(100% - 20px);
+    }
     #wrap_main{
         margin-top: 0;
     }
@@ -396,6 +540,15 @@ footer{
     }
     #main_body{
         padding: 0;
+    }
+    .news_boxs{
+        width: 100%;
+        flex-direction: column;
+    }
+    .news_box{
+        max-width: initial;
+        width: 100%;
+        margin: 0 auto 20px;
     }
     .pc_480{
         display: none;

@@ -331,3 +331,13 @@ header #user_icon img{
 :focus {
     outline: none;
 }
+
+@media screen and (max-width:480px) {
+    #app{
+        padding-top: 60px;
+        height: calc(100vh - 60px);
+    }
+    header{
+        border: none;
+    }
+}

@@ -8,14 +8,15 @@
     <meta name="theme-color" content="#1e137c">
     <script src="https://kit.fontawesome.com/9dacc9a3b2.js" crossorigin="anonymous"></script>
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/news.js"></script>
+    <script src="../assets/js/news.js?20210926"></script>
     <title>銀行を爆破した犯人、高校に立て篭もりか - Nohoon!ニュース</title>
-    <link rel="stylesheet" href="../assets/css/news.css">
+    <link rel="stylesheet" href="../assets/css/news.css?20210926-5">
 </head>
 <body>
     <div id="fixed_menu">
         <div id="notice_body">
             <div id="notice_head">
+                <div class="sp_close_button notice_button"><i class="fas fa-chevron-left"></i></div>
                 通知
             </div>
             <a href="../chat/">
@@ -34,11 +35,11 @@
     <header>
         <div id="header_content">
             <div id="header_logo">
-                <img src="../assets/img/news_logo.png" alt="" class="pc_480">
-                <img src="../assets/img/news_logo_sp.png" alt="" class="sp_480">
+                <img src="../assets/img/news_pc_logo.svg" alt="" class="pc_480">
+                <img src="../assets/img/news_logo.svg" alt="" class="sp_480">
             </div>
             <div id="user_info">
-                <div id="notice"><i class="fas fa-bell"></i><span>5</span></div>
+                <div id="notice" class="notice_button"><i class="fas fa-bell"></i><span>5</span></div>
                 <div id="user_icon">
                     <img src="../assets/img/user_icon.png" alt="">
                 </div>
@@ -82,16 +83,45 @@
                     <a href="#"><li>銀行爆破を受け、S県警は周辺地域に避難を呼びかけ。</li></a>
                     <a href="#"><li>○○地裁「可愛過ぎ尊死事件」に無罪判決。被害者の両親は控訴。</li></a>
                 </ul>
-                <div id="main_ad" class="clearfix">
-                    <img src="../assets/img/news_ad-300x250.png" alt="" class="ad_margin">
+                <div id="main_ad">
+                    <img src="../assets/img/news_ad-300x250.png" alt="">
                     <img src="../assets/img/news_ad-300x250.png" alt="">
                 </div>
                 <h2>今日読まれてるニュース</h2>
+                <ul class="news_boxs">
+                    <li class="news_box">
+                            <div class="news_box_img">
+                                <div class="news_box_img_inner"></div>
+                            </div>
+                            <div class="news_box_content">
+                                <div class="news_box_text_dummy">　</div>
+                                <div class="news_box_text"></div>
+                            </div>
+                    </li>
+                    <li class="news_box">
+                        <div class="news_box_img">
+                            <div class="news_box_img_inner"></div>
+                        </div>
+                        <div class="news_box_content">
+                            <div class="news_box_text_dummy">　</div>
+                            <div class="news_box_text"></div>
+                        </div>
+                    </li>
+                    <li class="news_box">
+                        <div class="news_box_img">
+                            <div class="news_box_img_inner"></div>
+                        </div>
+                        <div class="news_box_content">
+                            <div class="news_box_text_dummy">　</div>
+                            <div class="news_box_text"></div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="wrap_side">
-            <div id="side_ad" class="pc_1024">
-                <img src="../assets/img/news_ad.png" alt="">
+            <div id="side_ad" class="large_ad pc_1024">
+                <img src="../assets/img/news_ad.png" alt="" class="ad_border">
             </div>
             <h2 class="underline">最新のニュース</h2>
             <ul id="box-list">
@@ -99,6 +129,9 @@
                 <a href="#"><li>ファン待望の、全米が鼻で笑ったあの映画がついに日本上陸！</li></a>
                 <a href="#"><li>「犬猫戦争」に兎が介入。今後の情勢について専門家は？</li></a>
             </ul>
+            <div id="side_ad">
+                <img src="../assets/img/news_ad-300x250_nchat.png" alt="">
+            </div>
         </div>
     </main>
     <footer><small>⑨ 2021 NoHoon!<small></footer>

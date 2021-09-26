@@ -13,7 +13,11 @@ $(function(){
 
     	//スマホのアドレスバー対策
 	const resizeTopBox = () =>{
-		$('#app').css('height', $(window).height() - 64);
+        if($(window).width() <= 480){
+            $('#app').css('height', $(window).height() - 60);
+        }else{
+            $('#app').css('height', $(window).height() - 64);
+        }
 	}
 	resizeTopBox();
 	$(window).resize(function() {
